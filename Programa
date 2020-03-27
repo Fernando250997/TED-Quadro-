@@ -1,0 +1,40 @@
+package TED;
+import java.util.Scanner;
+
+import entidade.Entlivro;
+import entidade.Pessoas;
+
+public class Aula {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Codigo: ");
+		String codigo = sc.nextLine();
+		System.out.print("Nome: ");
+		Integer nome = sc.nextInt();
+		System.out.print("Curso: ");
+		sc.nextLine();
+		String curso = sc.nextLine();
+		Pessoas pessoa = new Pessoas(codigo,nome, curso);
+		System.out.println("Quantos livros você precisa? ");
+		int n = sc.nextInt();
+
+		for (int i = 1; i <= n; i++) {
+
+			System.out.println("Digite os dados do livro: ");
+			System.out.println("Titulo do livro: ");
+			sc.nextLine();
+			String titulo = sc.nextLine();
+			System.out.println("Codigo ISBN: ");
+			Integer isbn = sc.nextInt();
+			Entlivro livro = new Entlivro(titulo, isbn);
+			pessoa.addQuantLivros(livro);
+		}
+		System.out.println(pessoa);
+
+		sc.close();
+	}
+
+}
+		
