@@ -1,4 +1,4 @@
-package TED;
+package entidade;
 import java.util.Scanner;
 
 import entidade.Entlivro;
@@ -20,16 +20,17 @@ public class Aula {
 		System.out.println("Quantos livros você precisa? ");
 		int n = sc.nextInt();
 
-		for (int i = 1; i <= n; i++) {
+		for (int i = 1; i <= n; i++) 
+		{
 
-			System.out.println("Digite os dados do livro: ");
-			System.out.println("Titulo do livro: ");
-			sc.nextLine();
-			String titulo = sc.nextLine();
-			System.out.println("Codigo ISBN: ");
-			Integer isbn = sc.nextInt();
-			Entlivro livro = new Entlivro(titulo, isbn);
-			pessoa.addQuantLivros(livro);
+		System.out.println("Digite os dados do livro: ");
+		System.out.println("Titulo do livro: ");
+		sc.nextLine();
+		String titulo = sc.nextLine();
+		System.out.println("Codigo ISBN: ");
+		Integer numero = sc.nextInt();
+		Entlivro Entlivro = new Entlivro(titulo, numero);
+		pessoa.addQntLivros(Entlivro);
 		}
 		System.out.println(pessoa);
 
@@ -37,4 +38,3 @@ public class Aula {
 	}
 
 }
-		
