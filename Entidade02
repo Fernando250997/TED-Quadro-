@@ -1,7 +1,69 @@
-# TED-Quadro-package entidade;
+package entidade;
 
-public class Entlivro {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Pessoas {
+
+	private String Nome;
+	private Integer Codigo;
+	private String curso;
+	
+	private List<Entlivro> livros = new ArrayList<>();
+	public Pessoas(String nome, Integer matricula, String area) {
+		this.Nome = nome;
+		this.Codigo = matricula;
+		this.curso = area;
+	}
+
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String nome) {
+		this.Nome = nome;
+	}
+
+	public Integer getMatricula() {
+		return Codigo;
+	}
+
+	public void setMatricula(Integer matricula) {
+		this.Codigo = matricula;
+	}
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+
+    public List<Entlivro> getLivro(){
+    	return livros;
+    }
+
+	public void addQntLivros(Entlivro livro) {
+		livros.add(livro);
+	}
+	public void reQntLivros(Entlivro livro) {
+		livros.remove(livro);
+	}
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(Nome + "\n");
+		sb.append(curso + "\n");
+		sb.append("Livro Escolhido:\n");
+		for (Entlivro l  : livros) {
+			
+			sb.append(l.getTitulo() +"");
+			sb.append(l.getnumero() + "");
+		}
+			
+		return sb.toString();
+	}
+	
+	
 	
 }
-
-Código Incompleto
