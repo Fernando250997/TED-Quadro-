@@ -1,4 +1,4 @@
-# TED-Quadro-package entidade;
+package entidade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,11 +9,7 @@ public class Pessoas {
 	private Integer Codigo;
 	private String curso;
 	
-	private List<Entlivro> livros = new ArrayList<>(); 
-	
-	public Pessoas() {
-	}
-
+	private List<Entlivro> livros = new ArrayList<>();
 	public Pessoas(String nome, Integer matricula, String area) {
 		this.Nome = nome;
 		this.Codigo = matricula;
@@ -48,19 +44,22 @@ public class Pessoas {
     	return livros;
     }
 
-	public void addQuantLivros(Entlivro livro) {
+	public void addQntLivros(Entlivro livro) {
 		livros.add(livro);
 	}
-	public void removeQuantLivros(Entlivro livro) {
+	public void reQntLivros(Entlivro livro) {
 		livros.remove(livro);
 	}
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(Nome + "\n");
-		sb.append(Codigo +"\n" );
 		sb.append(curso + "\n");
 		sb.append("Livro Escolhido:\n");
 		for (Entlivro l  : livros) {
+			
+			sb.append(l.getTitulo() +"");
+			sb.append(l.getnumero() + "");
+		}
 			
 		return sb.toString();
 	}
@@ -68,5 +67,3 @@ public class Pessoas {
 	
 	
 }
-
-Código Incompleto
